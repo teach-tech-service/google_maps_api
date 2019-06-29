@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Map</title>
+        <meta name="viewport" content="initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="./style/index.css" />
+    </head>
+    <body>
+        <section class="wrapper">
+            <div id="map" class="map"></div>
+            <form class="form">
+                <input type="text" placeholder="Wyszukaj..." />
+            </form>
+            <div class="items">
+                <ul class="items__list" id="items_list"></ul>
+            </div>
+        </section>
+
+        <script>
+            var map;
+            function map() {
+                map = new google.maps.Map(document.getElementById("map"), {
+                    center: { lat: 50.049683, lng: 19.944544 },
+                    zoom: 16
+                });
+            }
+        </script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzGLroP91cG9fH6lP5n1kkazfwptaaVr8&callback=map"
+            async
+            defer
+        ></script>
+        <script src="js/data.js"></script>
+        <script src="js/places.js"></script>
+    </body>
+</html>
