@@ -1,7 +1,7 @@
-import places from "./data.js";
-
 const itemList = document.getElementById("items_list");
 let markup = "";
+let markers = [];
+
 let id, locationMap;
 
 places.map((place, index) => {
@@ -24,16 +24,20 @@ itemList.innerHTML = markup;
 itemList.addEventListener("click", event => {
     if (event.target.id === "items_list") {
         return;
+    } else if (event.target.classList.contains("item__close")) {
+        id = event.target.closest(".items__item").id;
+        markers[id].setMap(null);
+        event.target.parentNode.parentNode.removeChild(event.target.parentNode);
     } else {
         if (event.target.hasAttribute("id")) {
             id = event.target.id;
         } else {
             id = event.target.closest(".items__item").id;
         }
+        locationMap = new google.maps.LatLng(
+            places[id].latitude,
+            places[id].longitude
+        );
+        map.panTo(locationMap);
     }
-
-    locationMap = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: places[id].latitude, lng: places[id].longitude },
-        zoom: 16
-    });
 });

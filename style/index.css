@@ -20,8 +20,10 @@
 .items {
     position: absolute;
     top: 20%;
-    left: 5%;
+    left: 2%;
     background-color: white;
+    max-height: 75%;
+    overflow: scroll;
 }
 
 .items__list {
@@ -33,9 +35,8 @@
     position: relative;
     border: 1px solid black;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 30px 10px;
     margin: 15px;
 }
 
@@ -53,18 +54,18 @@
 }
 
 .item__info {
-    padding: 0 100px 0 0;
+    padding: 0 20px 0 0;
 }
 
 .item__img {
     max-width: 100%;
-    width: 100px;
+    width: 75px;
     height: auto;
     padding: 0 15px 0 0;
 }
 
 .item__address {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .item__address span {

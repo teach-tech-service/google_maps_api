@@ -5,7 +5,6 @@
         <meta name="viewport" content="initial-scale=1.0" />
         <meta charset="utf-8" />
         <link rel="stylesheet" href="./style/index.css" />
-        <script type="module" src="./js/places.js"></script>
     </head>
     <body>
         <section class="wrapper">
@@ -23,7 +22,15 @@
             function map() {
                 map = new google.maps.Map(document.getElementById("map"), {
                     center: { lat: 50.049683, lng: 19.944544 },
-                    zoom: 16
+                    zoom: 16,
+                    disableDefaultUI: true
+                });
+
+                places.map((place, index) => {
+                    markers[index] = new google.maps.Marker({
+                        position: { lat: place.latitude, lng: place.longitude },
+                        map: map
+                    });
                 });
             }
         </script>
@@ -32,5 +39,8 @@
             async
             defer
         ></script>
+
+        <script src="js/data.js"></script>
+        <script src="./js/places.js"></script>
     </body>
 </html>

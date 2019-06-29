@@ -25,7 +25,32 @@ let places = [
         zip: "31-501",
         city: "Kraków",
         package_type: "cash"
+    },
+    {
+        latitude: 50.056342,
+        longitude: 19.940276,
+        street: "Św Gertrudy",
+        number: 30,
+        zip: "31-046",
+        city: "Kraków",
+        package_type: "package"
+    },
+    {
+        latitude: 50.056342,
+        longitude: 19.940276,
+        street: "Św Gertrudy",
+        number: 30,
+        zip: "31-046",
+        city: "Kraków",
+        package_type: "package"
+    },
+    {
+        latitude: 50.056342,
+        longitude: 19.940276,
+        street: "Św Gertrudy",
+        number: 30,
+        zip: "31-046",
+        city: "Kraków",
+        package_type: "package"
     }
 ];
-
-export default places;
