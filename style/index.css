@@ -25,6 +25,7 @@
     max-height: 75%;
     overflow-y: scroll;
     border: 1px solid gray;
+    transition: all 1s;
 }
 
 .items__list {
@@ -90,4 +91,40 @@
     width: 50%;
     padding: 10px;
     font-size: 1.5rem;
+}
+
+.show-hide {
+    position: fixed;
+    left: 1%;
+    top: 130px;
+    z-index: 3;
+    width: 40px;
+    background-color: rgba(228, 233, 237, 1);
+    border-radius: 50%;
+}
+
+.toggle-hide {
+    animation-name: 'hide';
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.toggle-show {
+    animation-name: 'show';
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hide {
+    0% {}
+    100% {
+        transform: translateX(-400px);
+    }
+}
+
+@keyframes show {
+    0% {}
+    100% {
+        transform: translateX(0px);
+    }
 }
