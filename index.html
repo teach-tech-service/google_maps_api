@@ -32,12 +32,15 @@
                     disableDefaultUI: true
                 });
 
-                places.map((place, index) => {
-                    markers[index] = new google.maps.Marker({
-                        position: { lat: place.latitude, lng: place.longitude },
+                for (let i = 0; i < places.length; i++) {
+                    markers[i] = new google.maps.Marker({
+                        position: {
+                            lat: places[i].latitude,
+                            lng: places[i].longitude
+                        },
                         map: map
                     });
-                });
+                }
             }
         </script>
         <script

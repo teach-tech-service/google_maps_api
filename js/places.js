@@ -1,23 +1,23 @@
 const itemList = document.getElementById("items_list");
-let markup = "";
-let markers = [];
+let markup = "",
+    markers = [],
+    id,
+    locationMap;
 
-let id, locationMap;
-
-places.map((place, index) => {
-    markup += `<li class="items__item" id=${index}>
+for (let i = 0; i < places.length; i++) {
+    markup += `<li class="items__item" id=${i}>
             <img src="./images/error.png" alt="close icon" class="item__close" />
             <img src="./images/${
-                place.package_type
+                places[i].package_type
             }.png" alt="delivery" class="item__img" />
             <div class="item__info">
                 <p class="item__address">
-                    <span>ul.${place.street} ${place.number}</span>
-                    <span>${place.zip}, ${place.city}</span>
+                    <span>ul.${places[i].street} ${places[i].number}</span>
+                    <span>${places[i].zip}, ${places[i].city}</span>
                 </p>
             </div>
         </li>`;
-});
+}
 
 itemList.innerHTML = markup;
 
